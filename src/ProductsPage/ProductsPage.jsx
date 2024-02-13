@@ -17,8 +17,12 @@ const ProductsPage = ({ data }) => {
   };
 
   useEffect(() => {
-    updateCompanies(searchParams);
-  }, [searchParams, data]);
+    updateCompanies(data)
+  })
+
+  // useEffect(() => {
+  //   updateCompanies(searchParams);
+  // }, [searchParams, data]); 
 
   const handleChange = (e) => {
     const newName = e.target.value;
