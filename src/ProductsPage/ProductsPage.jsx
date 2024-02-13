@@ -5,7 +5,6 @@ const ProductsPage = ({ data }) => {
   const [companies, setCompanies] = useState(data);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Function to update the displayed companies based on query parameters
   const updateCompanies = (params) => {
     const filteredCompanies = data.filter((item) => {
       const { companyName } = item;
@@ -18,11 +17,9 @@ const ProductsPage = ({ data }) => {
   };
 
   useEffect(() => {
-    // When the component mounts or query parameters change, update the displayed companies
     updateCompanies(searchParams);
   }, [searchParams, data]);
 
-  // Function to update query parameters based on user input
   const handleChange = (e) => {
     const newName = e.target.value;
     setSearchParams({ name: newName });
